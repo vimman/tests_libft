@@ -8,27 +8,41 @@ int	main(int argc, char **argv)
 		printf("Wrong number of arguments");
 		return (1);
 	}
-	//else if (strcmp(argv[1], "memset"))
-	//{
-	//	printf("REAL = %s\n", (char *)memset(argv[2], atoi(argv[3]), atoi(argv[4])));
-	//	printf("YOU = %s\n", (char *)ft_memset(argv[2], atoi(argv[3]), atoi(argv[4])));
-	//}
-	//else if (strcmp(argv[1], "bzero"))
-	//{
-	//	char str[] = "J'ai la belle vie en Normandie";
-	//	char str1[] = "J'ai la belle vie en Normandie";
 
-	//	bzero(str, (size_t)argv[2]);
-	//	ft_bzero(str1, (size_t)argv[2]);
+	else if (atoi(argv[1]) == 1)
+	{
+		char 	*str;
+		
+		str = strdup(argv[2]);
+		printf("REAL = %s\n", (unsigned char *)memset(argv[2], atoi(argv[3]), atoi(argv[4])));
+		printf("YOU = %s\n", (unsigned char *)ft_memset(str, atoi(argv[3]), atoi(argv[4])));
+		free(str);
+	}
 
-	//	printf("REAL = %s\n", str);
-	//	printf("YOU = %s\n", str1);
-	//}
-	//else if (strcmp(argv[1], "memcpy"))
-	//{
-	//	printf("REAL = %s\n", memcpy((void *)argv[2], (void *)argv[3], atoi(argv[4])));
-	//	printf("YOU = %s\n", ft_memcpy((void *)argv[2], (void *)argv[3], atoi(argv[4])));
-	//}
+	else if (atoi(argv[1]) == 2)
+	{
+		int	i;
+		int	j;
+		char str[] = "J'ai la belle vie en Normandie";
+		char str1[] = "J'ai la belle vie en Normandie";
+
+		i = 0;
+		j = 0;
+		bzero(str, (size_t)atoi(argv[2]));
+		ft_bzero(str1, (size_t)atoi(argv[2]));
+
+		while (str[i] == 0)
+			i++;
+		while (str1[j] == 0)
+			j++;
+		printf("REAL = %s\n", &str[i]);
+		printf("YOU = %s\n", &str1[i]);
+	}
+//	else if (atoi(argv[1]) == 3)
+//	{
+//		printf("REAL = %s\n", memcpy((void *)argv[2], (void *)argv[3], atoi(argv[4])));
+//		printf("YOU = %s\n", ft_memcpy((void *)argv[2], (void *)argv[3], atoi(argv[4])));
+//	}
 	else if (atoi(argv[1]) == 8)
 	{
 		printf("REAL = %zu\n", strlen(argv[2]));
