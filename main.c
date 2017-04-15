@@ -41,29 +41,42 @@ int	main(int argc, char **argv)
 	}
 	else if (atoi(argv[1]) == 3)
 	{
-		char	test[100] = "voila mes boules";
-		ft_memcpy(test+5, test, strlen(test)+1);
-		printf("%s", test);
-//		char	*tmp;
-//		char	*tmp2;
-//
-//		tmp = strdup(argv[2]);
-//		tmp2 = &argv[2][1];
-//		printf("REAL = %s\n", memcpy(tmp2, tmp, atoi(argv[3])));
-//		tmp = strdup(argv[2]);
-//		tmp2 = &argv[2][1];
-//		printf("YOU = %s\n", ft_memcpy(tmp2, tmp, atoi(argv[3])));
+		char	*tmp;
+		char	*tmp2;
+
+		tmp = strdup(argv[2]);
+		tmp2 = &argv[2][2];
+		printf("REAL = %s\n", memcpy(tmp2, tmp, atoi(argv[3])));
+		
+		tmp = strdup(argv[2]);
+		tmp2 = &argv[2][2];
+		printf("YOU = %s\n", ft_memcpy(tmp2, tmp, atoi(argv[3])));
+		free(tmp);
 	}
 
-//	else if (atoi(argv[1]) == 4)
-//	{
-//		char	*tmp;
-//
-//		tmp = strdup(argv[3]);
-//		printf("REAL = %s\n", memccpy(argv[2], argv[3], atoi(argv[4])));
-//		printf("YOU = %s\n", ft_memccpy(argv[2], tmp, atoi(argv[4])));
-//		free(tmp);
-//	}
+	else if (atoi(argv[1]) == 4)
+	{
+		char *msg = "This is the string: not copied";
+		char buffer[80];
+		ft_memset( buffer, '\0', 80 );
+		ft_memccpy( buffer, msg, ':', 80 );
+		printf( "%s\n", buffer );
+			
+		char	*tmp;
+		char	*tmp2;
+
+		tmp2 = strdup(argv[2]);
+		tmp = strdup(argv[3]);
+		printf("REAL = %s\n", ft_memccpy(tmp2, tmp, (int)argv[4], atoi(argv[5])));
+		printf("%s\n", tmp2);
+
+		tmp2 = strdup(argv[2]);
+		tmp = strdup(argv[3]);
+		printf("YOU = %s\n", ft_memccpy(tmp2, tmp, (int)argv[4], atoi(argv[5])));
+		printf("%s\n", tmp2);
+		free(tmp);
+		free(tmp2);
+	}
 
 	else if (atoi(argv[1]) == 5)
 	{
@@ -71,14 +84,33 @@ int	main(int argc, char **argv)
 		char	*tmp2;
 
 		tmp = strdup(argv[2]);
-		tmp2 = &argv[2][1];
-		//printf("tmp = %p\n", tmp);
-		//printf("tmp2 = %p\n", tmp2);
+		tmp2 = &argv[2][2];
 		printf("REAL = %s\n", memmove(tmp2, tmp, atoi(argv[3])));
-		tmp = strdup(argv[2]);
-		tmp2 = &argv[2][1];
-		printf("YOU = %s\n", ft_memmove(tmp2, tmp, atoi(argv[3])));
 
+		tmp = strdup(argv[2]);
+		tmp2 = &argv[2][2];
+		printf("YOU = %s\n", ft_memmove(tmp2, tmp, atoi(argv[3])));
+		free(tmp);
+	}
+
+	else if (atoi(argv[1]) == 6)
+	{
+		const char str[] = "http://www.tutorialspoint.com";
+		const char ch = 'u';
+		char *ret;
+
+		ret = ft_memchr(str, ch, strlen(str));
+
+		printf("String after |%c| is - |%s|\n", ch, ret);
+
+		char	*tmp;
+
+		tmp = strdup(argv[2]);
+		printf("REAL = %s\n", memchr(tmp, atoi(argv[3]), atoi(argv[4])));
+
+		tmp = strdup(argv[2]);
+		printf("YOU = %s\n", ft_memchr(tmp, atoi(argv[3]), atoi(argv[4])));
+		free(tmp);
 	}
 
 	else if (atoi(argv[1]) == 8)
