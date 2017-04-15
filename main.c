@@ -113,6 +113,12 @@ int	main(int argc, char **argv)
 		free(tmp);
 	}
 
+	else if (atoi(argv[1]) == 7)
+	{
+		printf("REAL = %d\n", memcmp(argv[2], argv[3], atoi(argv[4])));
+		printf("YOU = %d\n", ft_memcmp(argv[2], argv[3], atoi(argv[4])));
+	}
+
 	else if (atoi(argv[1]) == 8)
 	{
 		printf("REAL = %zu\n", strlen(argv[2]));
