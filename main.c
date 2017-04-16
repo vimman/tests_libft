@@ -132,33 +132,70 @@ int	main(int argc, char **argv)
 
 	else if (atoi(argv[1]) == 10)
 	{
-		printf("REAL = %s\n", strcpy(argv[3], argv[2]));
-		printf("YOU = %s\n", ft_strcpy(argv[3], argv[2]));
+		printf("REAL = %s\n", strcpy(argv[2], argv[3]));
+		printf("YOU = %s\n", ft_strcpy(argv[2], argv[3]));
 	}
 
 	else if (atoi(argv[1]) == 11)
 	{
-		printf("REAL = %s\n", strncpy(argv[3], argv[2], atoi(argv[4])));
-		printf("YOU = %s\n", ft_strncpy(argv[3], argv[2], atoi(argv[4])));
+		printf("REAL = %s\n", strncpy(argv[2], argv[3], atoi(argv[4])));
+		printf("YOU = %s\n", ft_strncpy(argv[2], argv[3], atoi(argv[4])));
 	}
 
 	else if (atoi(argv[1]) == 12)
 	{
-		printf("REAL = %s\n", strcat(argv[3], argv[2]));
-		printf("YOU = %s\n", ft_strcat(argv[3], argv[2]));
+		printf("REAL = %s\n", strcat(argv[2], argv[3]));
+		printf("YOU = %s\n", ft_strcat(argv[2], argv[3]));
 	}
 
 	else if (atoi(argv[1]) == 13)
 	{
-		printf("REAL = %s\n", strncat(argv[3], argv[2], atoi(argv[4])));
-		printf("YOU = %s\n", ft_strncat(argv[3], argv[2], atoi(argv[4])));
+		printf("REAL = %s\n", strncat(argv[2], argv[3], atoi(argv[4])));
+		printf("YOU = %s\n", ft_strncat(argv[2], argv[3], atoi(argv[4])));
 	}
 
 	else if (atoi(argv[1]) == 14)
 	{
-		printf("REAL = %zu\n", strlcat(argv[3], argv[2], atoi(argv[4])));
-		printf("YOU = %zu\n", ft_strlcat(argv[3], argv[2], atoi(argv[4])));
+		printf("REAL = %zu\n", strlcat(argv[2], argv[3], atoi(argv[4])));
+		printf("YOU = %zu\n", ft_strlcat(argv[2], argv[3], atoi(argv[4])));
 	}
+
+	else if (atoi(argv[1]) == 15)
+	{
+		printf("REAL = %s\n", strchr(argv[2], atoi(argv[3])));
+		printf("YOU = %s\n", ft_strchr(argv[2], atoi(argv[3])));
+	}
+
+	else if (atoi(argv[1]) == 16)
+	{
+		printf("REAL = %s\n", strrchr(argv[2], atoi(argv[3])));
+		printf("YOU = %s\n", ft_strrchr(argv[2], atoi(argv[3])));
+	}
+
+	else if (atoi(argv[1]) == 17)
+	{
+		printf("REAL = %s\n", strstr(argv[2], argv[3]));
+		printf("YOU = %s\n", ft_strstr(argv[2], argv[3]));
+	}
+
+	else if (atoi(argv[1]) == 18)
+	{
+		printf("REAL = %s\n", strnstr(argv[2], argv[3], atoi(argv[4])));
+		printf("YOU = %s\n", ft_strnstr(argv[2], argv[3], atoi(argv[4])));
+	}
+
+	else if (atoi(argv[1]) == 19)
+	{
+		printf("REAL = %d\n", strcmp(argv[2], argv[3]));
+		printf("YOU = %d\n", ft_strcmp(argv[2], argv[3]));
+	}
+
+	else if (atoi(argv[1]) == 20)
+	{
+		printf("REAL = %d\n", strncmp(argv[2], argv[3], atoi(argv[4])));
+		printf("YOU = %d\n", ft_strncmp(argv[2], argv[3], atoi(argv[4])));
+	}
+
 	else if (atoi(argv[1]) == 21)
 	{
 		printf("REAL = %d\n", atoi(argv[2]));
