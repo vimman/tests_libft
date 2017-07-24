@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include "libft.h"
 
-int	main(int argc, char **argv)
+int	main(int argc, char **argv) // Yeah Baby this is for testing git mergetool
 {
 	if (argc < 2 && argc > 4)
 	{
